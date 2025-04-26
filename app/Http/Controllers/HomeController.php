@@ -133,5 +133,45 @@ class HomeController extends Controller
         ]);
     }
 
+    public function kritik_saran_store(Request $request)
+{
+        // Manual Validator dengan custom error message
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'nama' => 'required|string|regex:/^[a-zA-Z\s]+$/u|max:255', // Nama hanya huruf dan spasi
+            'alamat' => 'required|string|max:255',
+            'judul' => 'required|string|max:255',
+            'slug' => 'required|unique:kritik_sarans,slug',
+            'konten' => 'required|string',
+        ], [
+            'email.required' => 'Email harus diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'nama.required' => 'Nama harus diisi.',
+            'nama.regex' => 'Nama hanya boleh mengandung huruf dan spasi.',
+            'alamat.required' => 'Alamat harus diisi.',
+            'judul.required' => 'Judul harus diisi.',
+            'slug.required' => 'Slug harus diisi.',
+            'slug.unique' => 'Slug sudah digunakan, buat judul lain.',
+            'konten.required' => 'Kritik & Saran harus diisi.',
+        ]);
+
+        // Jika validasi gagal
+        if ($validator->fails()) {
+            return back()
+                ->with('toast_error', $validator->errors()->first())
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        // Jika lolos validasi
+        $validatedData = $validator->validated();
+
+        // Simpan ke database
+        KritikSaran::create($validatedData);
+
+        // Redirect setelah sukses
+        return redirect()->route('home.kritik_saran')->withSuccess('Kritik & Saran berhasil dikirim.');
+}
+
 
 }

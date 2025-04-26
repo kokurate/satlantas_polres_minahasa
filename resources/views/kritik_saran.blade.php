@@ -125,65 +125,71 @@
                     </div>
                     <!-- New Container with custom width-->
                     <div class="container justify-content-center">
-                        <form method="post"  action="" >
-                        @csrf
-            
-                        @error('email')
-                            <div class="is-invalid">
-                            <p style="color: red" class="d-flex text-left">{{ $message }}</p>
+                        <form method="post" action="{{ route('home.kritik_saran.store') }}" enctype="multipart/form-data">
+                            @csrf
+                        
+                            {{-- Email --}}
+                            <div class="form-floating mb-3">
+                                <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" autocomplete="off" value="{{ old('email') }}">
+                                <label for="email">Email</label>
+                                @error('email')
+                                    <div class="invalid-feedback d-block">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
-
-                        <div class="form-floating mb-3">
-                            <input name="email" type="email" class="form-control" id="floatingInput" autocomplete="off" value="{{ old('email') }}">
-                            <label for="floatingInput">Email</label>
-                          </div>
-
-                          
-                        <div class="form-floating mb-3">
-                            <input name="email" type="email" class="form-control" id="floatingInput" autocomplete="off" value="{{ old('nama') }}">
-                            <label for="floatingInput">Nama</label>
-                          </div>
-
-                        <div class="form-floating mb-3">
-                            <input name="email" type="email" class="form-control" id="floatingInput" autocomplete="off" value="{{ old('alamat') }}">
-                            <label for="floatingInput">Alamat</label>
-                          </div>
-
-                              <!-- Judul -->
-                        <div class="mb-3 form-floating">
-                           
-                            <input id="judul" type="text" name="judul" value="{{ old('judul') }}" class="form-control @error('judul') is-invalid @enderror">
-                            <label for="floatingInput">Judul</label>
-                            @error('judul')
-                            <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                        </div> 
-
-                        <div class="mb-3 form-floating">
-                            {{-- <input class="form-control" type="text" placeholder="Slug" aria-label="Disabled input example" disabled> --}}
-                            <input class="form-control @error('judul') is-invalid @enderror" type="text" name="slug" id="slug" value="{{ old('slug') }}" readonly>
-                            <label for="floatingInput">Slug</label>
-                        </div>
-            
-                      
-            
-                        <!-- Konten -->
-                        <div class="mb-3">
-                            <label for="konten" class="form-label"><span style="color: #ff0000">*</span> Kritik & Saran</label>
-                            @error('konten')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                            <input id="konten" 
-                            type="hidden" 
-                            name="konten" 
-                            value="{{ old('konten') }}" >
-                            <!-- End Input -->
-                            <trix-editor input="konten"></trix-editor>
-                        </div>  
-                    
-
-                        <button type="submit" class="my-2 btn d-flex text-center float-right" style="color: #ffffff; background-color:#0E1D34">Submit</button>
+                        
+                            {{-- Nama --}}
+                            <div class="form-floating mb-3">
+                                <input name="nama" type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" autocomplete="off" value="{{ old('nama') }}">
+                                <label for="nama">Nama</label>
+                                @error('nama')
+                                    <div class="invalid-feedback d-block">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        
+                            {{-- Alamat --}}
+                            <div class="form-floating mb-3">
+                                <input name="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" autocomplete="off" value="{{ old('alamat') }}">
+                                <label for="alamat">Alamat</label>
+                                @error('alamat')
+                                    <div class="invalid-feedback d-block">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        
+                            {{-- Judul --}}
+                            <div class="mb-3 form-floating">
+                                <input id="judul" type="text" name="judul" value="{{ old('judul') }}" class="form-control @error('judul') is-invalid @enderror">
+                                <label for="judul">Judul</label>
+                                @error('judul')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        
+                            {{-- Slug --}}
+                            <div class="mb-3 form-floating">
+                                <input class="form-control @error('slug') is-invalid @enderror" type="text" name="slug" id="slug" value="{{ old('slug') }}" readonly>
+                                <label for="slug">Slug</label>
+                                @error('slug')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        
+                            {{-- Konten --}}
+                            <div class="mb-3">
+                                <label for="konten" class="form-label"><span style="color: #ff0000">*</span> Kritik & Saran</label>
+                                <input id="konten" type="hidden" name="konten" value="{{ old('konten') }}">
+                                <trix-editor input="konten"></trix-editor>
+                                @error('konten')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        
+                            <button type="submit" class="my-2 btn d-flex text-center float-right" style="color: #ffffff; background-color:#0E1D34">Submit</button>
                         </form>
                     </div>
                     <!-- End of new container  -->

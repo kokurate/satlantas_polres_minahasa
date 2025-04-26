@@ -47,6 +47,7 @@ use Illuminate\Support\Facades\Route;
     // Kritik dan Saran
    
     Route::get('/kritik-saran',[HomeController::class,'kritik_saran'])->name('home.kritik_saran');
+    Route::post('/kritik-saran/store',[HomeController::class,'kritik_saran_store'])->name('home.kritik_saran.store');
 
 
 
