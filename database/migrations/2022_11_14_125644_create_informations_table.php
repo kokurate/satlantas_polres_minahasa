@@ -16,11 +16,11 @@ class CreateInformationsTable extends Migration
         Schema::create('informations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user');
-            $table->string('judul');
+            $table->string('judul')->nullable();
             $table->string('slug')->unique();
             // $table->id_user();
-            $table->text('konten');
-            $table->text('gbr_pendukung');
+            $table->text('konten')->nullable();
+            $table->text('gbr_pendukung')->nullable();
             $table->timestamps();
         });
     }

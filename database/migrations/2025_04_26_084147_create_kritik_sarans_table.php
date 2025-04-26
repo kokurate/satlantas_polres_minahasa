@@ -15,11 +15,13 @@ class CreateKritikSaransTable extends Migration
     {
         Schema::create('kritik_sarans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user');
-            $table->string('judul');
+            $table->string('email')->nullable();
+            $table->string('nama')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('judul')->nullable();
             $table->string('slug')->unique();
             // $table->id_user();
-            $table->text('konten');
+            $table->text('konten')->nullable();
 
             $table->timestamps();
         });
