@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Feedback;
 use App\Models\Information;
 use App\Models\Kritik_saran;
+use App\Models\User;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -62,7 +64,7 @@ class AdminController extends Controller
             // $validatedData['slug'] = Str::slug($validatedData['judul']). + 1;
             $validatedData['gbr_pendukung'] = $request->file('gbr_pendukung')->store('image');
             $validatedData['slug'] = $request->slug;
-            $validatedData['id_user'] = $request->id_user;
+            $validatedData['id_user'] = Auth::user()->id;
             // dd($validatedData);
             Information::create($validatedData);
 
@@ -96,6 +98,8 @@ class AdminController extends Controller
         
 
         $validatedData = $request->validate($rules);
+
+
         
         if($request->file('gbr_pendukung') ){
             // $rules = [ 'gbr_pendukung' => 'required|image|file|max:1024'];
@@ -110,6 +114,11 @@ class AdminController extends Controller
         // if($request->file('gbr_pendukung') == null){
 
         // }
+
+         // Ambil ID admin yang lagi login
+        //  $validatedData['id_user'] = Auth::user()->id; 
+        // tidak perlu karena nanti ditimpa user lain jika diupdate
+
 
        
 

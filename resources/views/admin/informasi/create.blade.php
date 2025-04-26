@@ -27,8 +27,6 @@
                 <h2 class="text-center">Tambah Informasi</h2>
                     <form method="post" action="{{ route('admin.informasi.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <!-- Make type hidden for the login admin-->
-                        <input type="hidden"  name="id_user" value="6">
 
                           <!-- Judul -->
                         <div class="mb-3">
