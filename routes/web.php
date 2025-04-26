@@ -66,4 +66,5 @@ use Illuminate\Support\Facades\Route;
     }));
 
     // Slug
-    Route::get('/admin/informasi/checkSlug',[AdminController::class,'checkSlug']);
+    Route::get('/admin/informasi/checkSlugInformation',[AdminController::class,'checkSlugInformation']);
+    Route::get('/admin/informasi/checkSlugKritikSaran',[AdminController::class,'checkSlugKritikSaran']);

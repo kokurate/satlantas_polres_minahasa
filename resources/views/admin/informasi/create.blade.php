@@ -116,7 +116,7 @@
         const slug = document.querySelector('#slug');
 
         judul.addEventListener('change', function(){
-            fetch('/admin/informasi/checkSlug?judul=' + judul.value)
+            fetch('/admin/informasi/checkSlugInformation?judul=' + judul.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
         });

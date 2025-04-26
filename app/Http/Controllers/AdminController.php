@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use App\Models\Information;
+use App\Models\Kritik_saran;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -68,7 +69,7 @@ class AdminController extends Controller
             return redirect()->route('admin.index')->withSuccess('Informasi berhasil ditambahkan');
     }
 
-    public function checkSlug (Request $request){
+    public function checkSlugInformation (Request $request){
         $slug = SlugService::createSlug(Information::class, 'slug', $request->judul);
         return response()->json(['slug' => $slug]);
     }
