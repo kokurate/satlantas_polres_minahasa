@@ -46,7 +46,7 @@ use Illuminate\Support\Facades\Route;
 
     // Kritik dan Saran
    
-    Route::get('/kritik_saran',[HomeController::class,'kritik_saran'])->name('home.kritik_saran');
+    Route::get('/kritik-saran',[HomeController::class,'kritik_saran'])->name('home.kritik_saran');
 
 
 
@@ -79,4 +79,4 @@ use Illuminate\Support\Facades\Route;
 
     // Slug
     Route::get('/admin/informasi/checkSlugInformation',[AdminController::class,'checkSlugInformation']);
-    Route::get('/admin/informasi/checkSlugKritikSaran',[AdminController::class,'checkSlugKritikSaran']);
+    Route::get('/kritik-saran/checkSlugKritikSaran',[HomeController::class,'checkSlugKritikSaran']);

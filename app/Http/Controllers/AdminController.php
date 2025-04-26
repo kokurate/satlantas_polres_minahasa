@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use App\Models\Information;
-use App\Models\Kritik_saran;
+use App\Models\KritikSaran;
 use App\Models\User;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
@@ -139,7 +139,7 @@ class AdminController extends Controller
     }
 
 
-    public function kritik_saran_detail(Kritik_saran $kritik_saran){
+    public function kritik_saran_detail(KritikSaran $kritik_saran){
 
         return view ('admin.kritik_saran.detail',[
             'slug' => $kritik_saran,

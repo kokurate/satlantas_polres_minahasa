@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Mail\RegisterFeedback;
 use App\Models\Information;
-use App\Models\Kritik_saran;
+use App\Models\KritikSaran;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -123,7 +123,7 @@ class HomeController extends Controller
 
 
     public function checkSlugKritikSaran (Request $request){
-        $slug = SlugService::createSlug(Kritik_saran::class, 'slug', $request->judul);
+        $slug = SlugService::createSlug(KritikSaran::class, 'slug', $request->judul);
         return response()->json(['slug' => $slug]);
     }
 

@@ -162,7 +162,7 @@
 
                         <div class="mb-3 form-floating">
                             {{-- <input class="form-control" type="text" placeholder="Slug" aria-label="Disabled input example" disabled> --}}
-                            <input class="form-control" type="text" name="slug class="form-control @error('judul') is-invalid @enderror" id="slug" value="{{ old('slug') }}"  readonly>
+                            <input class="form-control @error('judul') is-invalid @enderror" type="text" name="slug" id="slug" value="{{ old('slug') }}" readonly>
                             <label for="floatingInput">Slug</label>
                         </div>
             
@@ -198,4 +198,19 @@
 
 
   </main><!-- End #main -->
+@endsection
+
+@section('footer')
+  
+    <!-- For Slug using fetch api -->
+    <script>
+        const judul = document.querySelector('#judul');
+        const slug = document.querySelector('#slug');
+
+        judul.addEventListener('change', function(){
+            fetch('/kritik-saran/checkSlugKritikSaran?judul=' + judul.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+        });
+    </script>
 @endsection
