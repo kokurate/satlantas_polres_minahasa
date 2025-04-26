@@ -127,6 +127,11 @@ class HomeController extends Controller
         return response()->json(['slug' => $slug]);
     }
 
+    public function kritik_saran(){
+        return view('kritik_saran',[
+        
+        ]);
+    }
 
 
 }

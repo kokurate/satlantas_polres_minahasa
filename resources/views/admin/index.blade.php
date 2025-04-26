@@ -41,7 +41,7 @@
             
         
 
-        <div class="container">
+        <div class="container" data-aos="fade-up">
                 <div class="row">
                     {{-- <div class="col-2"></div> --}}
                     <div class="col-lg-8 rounded shadow-lg p-3 bg-body mx-auto">
@@ -79,6 +79,17 @@
         </div> <!-- End Container-->
         
     </section><!-- End About Section -->
+    <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
     
 
@@ -117,6 +128,74 @@
     
             </div>
         </section><!-- End Resume Section -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+
+         <!-- ======= Resume Section ======= -->
+         <section id="kritiksarantop" class="kritiksarantop">
+            <div class="container" data-aos="fade-up">
+    
+            <div class="section-title">
+                <h2>Kritik & Saran</h2>
+                {{-- <p> testing.</p> --}}
+            </div>
+    
+            <div class="row">
+                {{-- <div class="col-lg-8 mx-auto rounded shadow p-3"> --}}
+                <div class="col-lg-8 rounded shadow-lg p-3 bg-body mx-auto">
+                    <table id="kritiksaran" class="display mb-5 cell-border" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Judul</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {{-- <td><a href="#">{!! $list->konten !!}</a></td> --}}
+                                <td>Tolong perbaiki pelayanan</td>
+                                
+                                <td>bos@gmail.com</td>
+                                <td class="text-center">
+                                    <a href="{{ route("admin.kritik_saran.detail") }}" class="mx-2"><i class="bi bi-pencil" style="color: orange"></i></i></a>
+                                    <form action="" method="post" class="d-inline">
+                                        <button class="mx-2 border-0 " onclick="return confirm('Yakin mau hapus ?')"><i class="bi bi-trash" style="color: red"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+    
+            </div>
+        </section><!-- End Resume Section -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
     
@@ -166,6 +245,12 @@
         <script>
             $(document).ready( function () {
                 $('#feedback').DataTable();
+            } );
+        </script>
+
+        <script>
+            $(document).ready( function () {
+                $('#kritiksaran').DataTable();
             } );
         </script>
     @endsection

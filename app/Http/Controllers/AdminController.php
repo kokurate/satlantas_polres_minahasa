@@ -128,4 +128,13 @@ class AdminController extends Controller
 
         return redirect()->route('admin.index')->withSuccess('Berhasil hapus data');
     }
+
+
+    public function kritik_saran_detail(Kritik_saran $kritik_saran){
+
+        return view ('admin.kritik_saran.detail',[
+            'slug' => $kritik_saran,
+        ]);
+
+    }
 }

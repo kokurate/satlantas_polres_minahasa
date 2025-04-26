@@ -54,8 +54,9 @@
             <nav id="navbar" class="navbar nav-menu">
             <ul>
                 <li><a href="{{ route('admin.index', '#hero') }} " class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                <li><a href="{{ route('admin.index', '#about') }} " class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-                <li><a href="{{ route('admin.index', '#resume') }} " class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                <li><a href="{{ route('admin.index', '#about') }} " class="nav-link scrollto"><i class="bx bx-user"></i> <span>Informasi Publik</span></a></li>
+                <li><a href="{{ route('admin.index', '#resume') }} " class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Umpan Balik Masyarakat</span></a></li>
+                <li><a href="{{ route('admin.index', '#kritiksarantop') }} " class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Kritik & Saran</span></a></li>
                 <li><a href="{{ route('register') }}" class="nav-link scrollto"><i class="bx bx-plus"></i> <span>Register</span></a></li> 
                 <li>
                 <form action="{{ route('logout') }}" method="post">

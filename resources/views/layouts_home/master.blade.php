@@ -61,6 +61,7 @@
         <li><a href="/" class="active">Home</a></li>
         <li><a href="{{ route('home.informasi') }}">informasi</a></li>
         <li><a href="{{ route('home.feedback') }}">Umpan Balik</a></li>
+        <li><a href="{{ route('home.kritik_saran') }}">Kritik dan Saran</a></li>
         {{-- <li><a href="#">About Us</a></li> --}}
         <!--    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
@@ -116,6 +117,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="{{ route('home.informasi') }}">Informasi</a></li>
             <li><a href="{{ route('home.feedback') }}">Umpan Balik</a></li>
+            <li><a href="{{ route('home.kritik_saran') }}">Kritik & Saran</a></li>
             <li><a href="#">About Us</a></li>
             {{-- <li><a href="#">Privacy policy</a></li> --}}
         </ul>

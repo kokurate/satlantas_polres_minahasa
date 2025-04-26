@@ -33,7 +33,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/informasi',[HomeController::class,'informasi'])->name('home.informasi');
     Route::get('/informasi/detail/{information:slug}',[HomeController::class,'informasi_detail'])->name('home.informasi.detail');
 
-
+    // Feedback
     Route::get('/feedback',[HomeController::class,'feedback'])->name('home.feedback');
     Route::get('/feedback-register',[HomeController::class,'register_feedback'])->name('home.feedback.register');
     Route::post('/feedback-register',[HomeController::class,'register_feedback_store'])->name('home.feedback.register.store');
@@ -42,6 +42,12 @@ use Illuminate\Support\Facades\Route;
     Route::post('/feedback/create/{feedback:token}',[HomeController::class,'create_feedback_store'])->name('home.feedback.create.store');
 
     Route::get('feedback/{feedback:token}', [HomeController::class,'feedback_detail'])->name('home.feedback.detail');
+
+
+    // Kritik dan Saran
+   
+    Route::get('/kritik_saran',[HomeController::class,'kritik_saran'])->name('home.kritik_saran');
+
 
 
     // Admin ===========================================================
@@ -63,6 +69,12 @@ use Illuminate\Support\Facades\Route;
         Route::get('admin/informasi/update/{information:slug}', [AdminController::class,'informasi_update'])->name('admin.informasi.update');
         Route::post('admin/informasi/update/{information:slug}', [AdminController::class,'informasi_update_store'])->name('admin.informasi.update.store');
         Route::delete('/admin/informasi/destroy/{information:slug}',[AdminController::class,'informasi_destroy'])->name('admin.informasi.destroy');
+
+        // Kritik dan Saran
+        // Route::get('/kritik-saran/{kritik_saran:slug}',[HomeController::class,'kritik_saran_detail'])->name('admin.kritik_saran_detail');
+        Route::get('admin/kritik-saran',[AdminController::class,'kritik_saran_detail'])->name('admin.kritik_saran.detail');
+
+
     }));
 
     // Slug
