@@ -1,40 +1,49 @@
 @extends('_layouts.master')
 
 @section('content')
-    <br><br>
-    <div class="container my-3">
-        <div class="row">
-            <div class="col-8 mx-auto rounded shadow p-3">
-                <a href="{{ route('admin.index') }}" class="btn btn-primary" >
-                    {{-- <i class="bi bi-arrow-left-square-fill" style="width:100px;"></i> --}}
-                    <i class="bi bi-arrow-left" ></i>
-                </a>
+<br><br>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-10 mx-auto rounded shadow p-4 bg-white">
+            <a href="{{ route('admin.index') }}" class="btn btn-primary mb-3">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
 
-                <img src="/logo.png" class="mx-auto d-flex justify-content-center mx-2" alt="Logo" style="width: 15%;">
-                <h2 class="text-center">Detail Kritik & Saran</h2>
-                <br>
-                
-                
-                <div class="container py-5">
-                    <div class="card">
-                      <div class="card-header text-center">
-                        <h4>Judul</h4>
-                      </div>
-                      <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><strong>Email:</strong> contoh@email.com</li>
-                          <li class="list-group-item"><strong>Nama:</strong> Budi Santoso</li>
-                          <li class="list-group-item"><strong>Alamat:</strong> Jl. Raya Minahasa No.123</li>
-                          <li class="list-group-item"><strong>Kritik dan Saran:</strong> Website perlu ditingkatkan kecepatan aksesnya dan diperbarui informasi layanan secara berkala.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
+            <div class="text-center mb-4">
+                <img src="/logo.png" alt="Logo" style="width: 15%;">
+                <h2 class="mt-3">Detail Kritik & Saran</h2>
             </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-black text-white text-center">
+                    <h4 class="mb-0">{{ $kritik_saran->judul }}</h4> 
+                </div>
+                <div class="card-body p-0">
+                    <table class="table mb-0 table-striped">
+                        <tbody>
+                            <tr>
+                                <th class="col-4 text-end align-middle">Email :</th>
+                                <td class="col-8 align-middle">{{ $kritik_saran->email }}</td>
+                            </tr>
+                            <tr>
+                                <th class="col-4 text-end align-middle">Nama :</th>
+                                <td class="col-8 align-middle">{{ $kritik_saran->nama }}</td>
+                            </tr>
+                            <tr>
+                                <th class="col-4 text-end align-middle">Alamat :</th>
+                                <td class="col-8 align-middle">{{ $kritik_saran->alamat }}</td>
+                            </tr>
+                            <tr>
+                                <th class="col-4 text-end align-middle">Kritik & Saran :</th>
+                                <td class="col-8">{!! $kritik_saran->konten !!}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <br><br><br><br><br><br>
+</div>
+<br><br><br><br><br><br>
 @endsection
-

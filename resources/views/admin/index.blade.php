@@ -159,23 +159,28 @@
                         <thead>
                             <tr>
                                 <th class="text-center">Judul</th>
-                                <th class="text-center">Email</th>
+                                <th class="text-center">Nama</th>
                                 <th class="text-center"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                {{-- <td><a href="#">{!! $list->konten !!}</a></td> --}}
-                                <td>Tolong perbaiki pelayanan</td>
-                                
-                                <td>bos@gmail.com</td>
-                                <td class="text-center">
-                                    <a href="{{ route("admin.kritik_saran.detail") }}" class="mx-2"><i class="bi bi-pencil" style="color: orange"></i></i></a>
-                                    <form action="" method="post" class="d-inline">
-                                        <button class="mx-2 border-0 " onclick="return confirm('Yakin mau hapus ?')"><i class="bi bi-trash" style="color: red"></i></button>
-                                    </form>
-                                </td>
-                            </tr>
+                                @foreach ($kritik_saran as $kritiksaran)
+                                <tr>
+                                   
+                                    <td class="text-center"> {{ $kritiksaran->judul }}</td>
+                                    <td class="text-center"> {{ $kritiksaran->nama }}</td>
+                                    
+                                    <td class="text-center">
+                                        <a href="{{ route('admin.kritik_saran.detail', $kritiksaran->slug) }}" class="mx-2"><i class="bi bi-pencil" style="color: orange"></i></a>
+                                        {{-- <a href="" class="mx-2"><i class="bi bi-trash" style="color: red"></i></a> --}}
+                                        <form action="{{ route('admin.kritik_saran.destroy', $kritiksaran->slug) }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="mx-2 border-0 " onclick="return confirm('Yakin mau hapus ?')"><i class="bi bi-trash" style="color: red"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

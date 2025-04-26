@@ -20,6 +20,7 @@ class AdminController extends Controller
         return view('admin.index',[
             'feedback' => Feedback::WhereNotNull('konten')->orderBy('updated_at','ASC')->get(),
             'information' => Information::orderBy('updated_at', 'ASC')->get(),
+            'kritik_saran' => KritikSaran::orderBy('updated_at', 'ASC')->get()
         ]);
     }
 
@@ -139,11 +140,22 @@ class AdminController extends Controller
     }
 
 
-    public function kritik_saran_detail(KritikSaran $kritik_saran){
-
-        return view ('admin.kritik_saran.detail',[
-            'slug' => $kritik_saran,
+    public function kritik_saran_detail(KritikSaran $kritik_saran)
+    {
+        return view('admin.kritik_saran.detail', [
+            'kritik_saran' => $kritik_saran, // Mengirimkan data lengkap kritik_saran ke view
         ]);
+    }
+
+
+    public function kritik_saran_destroy(KritikSaran $kritik_saran){
+
+        // Hapus data dari database
+        $kritik_saran->delete();
+    
+        // Redirect dengan pesan sukses
+        return redirect()->route('admin.index')->withSuccess('Kritik & Saran berhasil dihapus!');
 
     }
+    
 }

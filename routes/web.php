@@ -72,9 +72,11 @@ use Illuminate\Support\Facades\Route;
         Route::delete('/admin/informasi/destroy/{information:slug}',[AdminController::class,'informasi_destroy'])->name('admin.informasi.destroy');
 
         // Kritik dan Saran
-        // Route::get('/kritik-saran/{kritik_saran:slug}',[HomeController::class,'kritik_saran_detail'])->name('admin.kritik_saran_detail');
-        Route::get('admin/kritik-saran',[AdminController::class,'kritik_saran_detail'])->name('admin.kritik_saran.detail');
-
+        Route::get('admin/kritik-saran/{kritik_saran:slug}',[AdminController::class,'kritik_saran_detail'])->name('admin.kritik_saran.detail');
+        Route::delete('admin/kritik-saran/{kritik_saran:slug}/destroy', [AdminController::class, 'kritik_saran_destroy'])->name('admin.kritik_saran.destroy');
+        
+        
+        // Route::post('/kritik-saran/update',[HomeController::class,'kritik_saran_store'])->name('home.kritik_saran.store');
 
     }));
 
