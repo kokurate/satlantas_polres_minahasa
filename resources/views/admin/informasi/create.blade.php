@@ -5,22 +5,22 @@
     <link rel="stylesheet" type="text/css" href="/css/trix.css">
     <script type="text/javascript" src="/js/trix.js"></script> 
     {{-- Menghilangkan CSS Attach File Pada Trix Editor --}}
-    {{-- <style>
+    <style>
     trix-toolbar [data-trix-button-group="file-tools"]{
         display: none;
     }
-    </style> --}}
+    </style>
 @endsection
 
 @section('content')
     <br><br>
     <div class="container my-3">
         <div class="row">
-            <div class="col-8 mx-auto rounded shadow p-3">
+            <div class="col-10 mx-auto rounded shadow p-3">
 
                 <a href="{{ route('admin.index') }}" class="btn btn-primary" >
                     {{-- <i class="bi bi-arrow-left-square-fill" style="width:100px;"></i> --}}
-                    <i class="bi bi-arrow-left" ></i>
+                    <i class="bi bi-arrow-left"></i> Kembali
                 </a>
 
                 <img src="/logo.png" class="mx-auto d-flex justify-content-center mx-2" alt="Logo" style="width: 15%;">

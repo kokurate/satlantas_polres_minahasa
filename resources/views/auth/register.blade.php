@@ -12,11 +12,11 @@
 
           
 
-            <div class="col-6 mx-auto rounded shadow p-3">
+            <div class="col-8 mx-auto rounded shadow p-3">
 
                 <a href="{{ route('admin.index') }}" class="btn btn-primary" >
                     {{-- <i class="bi bi-arrow-left-square-fill" style="width:100px;"></i> --}}
-                    <i class="bi bi-arrow-left" ></i>
+                    <i class="bi bi-arrow-left" ></i> Kembali
                 </a>
 
 

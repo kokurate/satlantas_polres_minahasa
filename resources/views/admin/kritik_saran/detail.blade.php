@@ -19,26 +19,31 @@
                     <h4 class="mb-0">{{ $kritik_saran->judul }}</h4> 
                 </div>
                 <div class="card-body p-0">
-                    <table class="table mb-0 table-striped">
-                        <tbody>
-                            <tr>
-                                <th class="col-4 text-end align-middle">Email :</th>
-                                <td class="col-8 align-middle">{{ $kritik_saran->email }}</td>
-                            </tr>
-                            <tr>
-                                <th class="col-4 text-end align-middle">Nama :</th>
-                                <td class="col-8 align-middle">{{ $kritik_saran->nama }}</td>
-                            </tr>
-                            <tr>
-                                <th class="col-4 text-end align-middle">Alamat :</th>
-                                <td class="col-8 align-middle">{{ $kritik_saran->alamat }}</td>
-                            </tr>
-                            <tr>
-                                <th class="col-4 text-end align-middle">Kritik & Saran :</th>
-                                <td class="col-8">{!! $kritik_saran->konten !!}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  <table class="table mb-0 table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="text-left" style="width: 20%;"><b>Email </b></td>
+                            <td style="width: 2%; text-align: center;">:</td>
+                            <td>{{ $kritik_saran->email }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left" style="width: 20%;"><b>Nama </b></td>
+                            <td style="width: 2%; text-align: center;">:</td>
+                            <td>{{ $kritik_saran->nama }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left" style="width: 20%;"><b>Alamat </b></td>
+                            <td style="width: 2%; text-align: center;">:</td>
+                            <td>{{ $kritik_saran->alamat }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left" style="width: 20%;"><b>Kritik & Saran</b></td>
+                            <td style="width: 2%; text-align: center;">:</td>
+                            <td>{!! $kritik_saran->konten !!}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
                 </div>
             </div>
 
