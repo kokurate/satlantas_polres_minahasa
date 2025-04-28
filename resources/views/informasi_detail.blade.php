@@ -50,6 +50,13 @@
                 {!! $info->konten !!}
               </div>
 
+
+               <!-- Created At Section -->
+            <div class="mt-5 text-muted text-center" style="font-size: 0.875rem;">
+              <strong>Dibuat pada:</strong> 
+              <span>{{ \Carbon\Carbon::parse($info->created_at)->isoFormat('dddd, D MMMM YYYY') }}</span>
+            </div>
+
               <div class="text-end mt-4">
                 <a href="{{ route('home.informasi') }}" class="btn btn-outline-primary rounded-pill">
                   <i class="bi bi-arrow-left"></i> Kembali ke Informasi

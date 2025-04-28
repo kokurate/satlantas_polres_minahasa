@@ -22,10 +22,21 @@ class HomeController extends Controller
         ]);
     }
 
-    public function informasi(){
-        return view('informasi',[
-            'information' => Information::all(),
-        ]);
+    public function informasi(Request $request){
+        
+            $query = Information::query();
+        
+            // Kalau ada input search
+            if ($request->has('search') && $request->search != '') {
+                $query->where('judul', 'like', '%' . $request->search . '%')
+                      ->orWhere('konten', 'like', '%' . $request->search . '%');
+            }
+        
+            $information = $query->orderBy('created_at', 'desc')->paginate(10); // 10 item per halaman
+        
+            return view('informasi', [
+                'information' => $information,
+            ]);
     }
 
     public function informasi_detail(Information $information){
@@ -133,8 +144,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function kritik_saran_store(Request $request)
-{
+    public function kritik_saran_store(Request $request){
         // Manual Validator dengan custom error message
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -171,7 +181,7 @@ class HomeController extends Controller
 
         // Redirect setelah sukses
         return redirect()->route('home.kritik_saran')->withSuccess('Kritik & Saran berhasil dikirim.');
-}
+    }
 
 
 }

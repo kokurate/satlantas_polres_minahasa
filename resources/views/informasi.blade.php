@@ -56,6 +56,18 @@
         <h5>Informasi Berbagai Layanan Oleh Satlantas Polres Minahasa</h5>
       </div>
 
+
+      <!-- Search Bar-->
+        <div class="row mb-5">
+          <div class="col-md-6 offset-md-3">
+              <form action="{{ route('home.informasi') }}" method="GET" class="d-flex">
+                  <input type="text" name="search" class="form-control me-2" placeholder="Cari informasi..." value="{{ request('search') }}">
+                  <button type="submit" class="btn btn-primary">Cari</button>
+              </form>
+          </div>
+      </div>
+    
+
       <div class="row gy-4">
         @forelse($information as $info)
           <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
@@ -84,6 +96,48 @@
             <h1 class="text-center">Belum Ada Informasi</h1>
           </div>
         @endforelse
+
+        <!-- Paginate Link-->
+        <hr class="mt-" data-aos="fade-up">
+        {{-- <div class="d-flex justify-content-center mt-5" data-aos="fade-up">
+           {{ $information->withQueryString()->links() }}
+        </div>
+        <br> --}}
+        <br>
+        @if ($information->hasPages())
+          <nav data-aos="fade-up">
+              <ul class="pagination justify-content-center">
+                  {{-- Tombol Previous --}}
+                  @if ($information->onFirstPage())
+                      <li class="page-item disabled"><span class="page-link">Sebelumnya</span></li>
+                  @else
+                      <li class="page-item">
+                          <a class="page-link" href="{{ $information->previousPageUrl() }}" rel="prev">Sebelumnya</a>
+                      </li>
+                  @endif
+
+                  {{-- Angka-angka --}}
+                  @foreach ($information->links()->elements[0] as $page => $url)
+                      @if ($page == $information->currentPage())
+                          <li class="page-item active"><span class="page-link">{{ $page }}</span></li>
+                      @else
+                          <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                      @endif
+                  @endforeach
+
+                  {{-- Tombol Next --}}
+                  @if ($information->hasMorePages())
+                      <li class="page-item">
+                          <a class="page-link" href="{{ $information->nextPageUrl() }}" rel="next">Selanjutnya</a>
+                      </li>
+                  @else
+                      <li class="page-item disabled"><span class="page-link">Selanjutnya</span></li>
+                  @endif
+              </ul>
+          </nav>
+        @endif
+
+      
       </div>
 
     </div>
