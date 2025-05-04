@@ -35,7 +35,7 @@
         <div class="section-header">
           <span>Registrasi Email</span>
           <h2>Registrasi Email</h2>
-          <h5>untuk membuat umpan balik, silahkan registrasi email di bawah ini</h5>
+          <h5>Untuk membuat Pengaduan, silahkan registrasi email di bawah ini</h5>
 
         </div>
       <!-- New Container with custom width-->

@@ -10,7 +10,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
             <img src="/logo.png" alt="LOGO" class="my-3" style="width: 80px; border-radius: 10px;">
-            <h3 class="text-white mt-3">Detail Umpan Balik</h3>
+            <h3 class="text-white mt-3">Detail Pengaduan</h3>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
   </div>
   <!-- End Breadcrumbs -->
 
-  <!-- Detail Umpan Balik Section -->
+  <!-- Detail Pengaduan Section -->
   <section id="service" class="services pt-5 pb-5">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-center">
@@ -57,7 +57,7 @@
             <!-- Back Button -->
             <div class="text-end mt-4">
               <a href="{{ route('home.feedback') }}" class="btn btn-outline-dark rounded-pill px-4 py-2">
-                <i class="bi bi-arrow-left"></i> Kembali ke Feedback
+                <i class="bi bi-arrow-left"></i> Kembali ke Pengaduan
               </a>
             </div>
           </div>
@@ -65,7 +65,7 @@
       </div>
     </div>
   </section>
-  <!-- End Detail Umpan Balik Section -->
+  <!-- End Detail Pengaduan Section -->
 
 </main>
 @endsection

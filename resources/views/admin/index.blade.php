@@ -8,8 +8,8 @@
             <section id="hero" class="d-flex flex-column justify-content-center">
                 <div class="container" data-aos="zoom-in" data-aos-delay="100">
                     <h1>Selamat Datang</h1>
-                    <p>Petugas, {{ auth()->user()->fullname }} </p>
-                    <p>Kasatlantas Polres Minahasa</p>
+                    <p>{{ auth()->user()->fullname }} </p>
+                    <p>{{ auth()->user()->pangkat ?? '' }} Polres Minahasa</p>
                     {{-- <div class="social-links">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -75,12 +75,12 @@
         </div>
     </section>
 
-    <!-- Umpan Balik -->
+    <!-- Pengaduan -->
     <section class="py-5 bg-white" id="resume">
         <div class="container" data-aos="fade-up">
             <div class="mb-4 text-center">
-                <h2 class="fw-bold">📩 Umpan Balik Masyarakat</h2>
-                <p class="text-muted">Masukan yang dikirimkan oleh masyarakat.</p>
+                <h2 class="fw-bold">📩 Pengaduan Masyarakat</h2>
+                <p class="text-muted">Pengaduan yang dikirimkan oleh masyarakat.</p>
             </div>
 
             <div class="card border-0 shadow rounded-4 p-4 bg-light">
@@ -88,7 +88,7 @@
                     <table id="feedback" class="table align-middle table-hover">
                         <thead class="table-light">
                             <tr>
-                                <th>Isi Umpan Balik</th>
+                                <th>Isi Pengaduan</th>
                                 <th>Email</th>
                                 <th class="text-center">Detail</th>
                             </tr>

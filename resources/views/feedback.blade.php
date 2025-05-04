@@ -66,7 +66,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
             <img class="my-2" src="/logo.png" alt="LOGO" style="width: 25%;">
-            <h3 class="text-white">Umpan Balik (<i>Feedback</i>)</h3>
+            <h3 class="text-white">Pengaduan</h3>
           </div>
         </div>
       </div>
@@ -85,15 +85,15 @@
   <section id="feedback" class="services pt-0">
     <div class="container" data-aos="fade-up">
       <div class="section-header text-center mb-4">
-        <span>Umpan Balik</span>
-        <h2>Umpan Balik (feedback)</h2>
-        <h5>Semua umpan balik masyarakat terhadap pelayanan oleh Satlantas Polres Minahasa</h5>
+        <span>Pengaduan</span>
+        <h2>Pengaduan</h2>
+        <h5>Semua Pengaduan masyarakat terhadap pelayanan oleh Satlantas Polres Minahasa</h5>
       </div>
 
       <div class="container">
         <!-- Tombol feedback baru di tengah -->
         <div class="text-center-custom">
-          <a href="{{ route('home.feedback.register') }}" class="btn-feedback">Tambahkan Feedback Baru</a>
+          <a href="{{ route('home.feedback.register') }}" class="btn-feedback">Tambahkan Pengaduan Baru</a>
         </div>
 
         <div class="row d-flex justify-content-center gy-4">
@@ -101,7 +101,7 @@
             <table id="table_id" class="display table table-striped table-bordered table-hover mb-5">
               <thead>
                 <tr>
-                  <th class="text-center">Umpan Balik</th>
+                  <th class="text-center">Pengaduan</th>
                   <th class="text-center">Email</th>
                 </tr>
               </thead>
@@ -118,7 +118,7 @@
                   </tr>
                 @empty
                   <tr>
-                    <td colspan="2" class="text-center">Tidak ada umpan balik saat ini.</td>
+                    <td colspan="2" class="text-center">Tidak ada Pengaduan saat ini.</td>
                   </tr>
                 @endforelse
               </tbody>

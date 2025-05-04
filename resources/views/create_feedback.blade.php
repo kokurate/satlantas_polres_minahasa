@@ -23,7 +23,7 @@
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
                 <img class="my-2" src="/logo.png" alt="LOGO" style="width: 25%;">
-                <h3>Tambah Umpan Balik (<i>feedback</i>)</h2>
+                <h3>Tambah Pengaduan</h2>
                 {{-- <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p> --}}
             </div>
           </div>
@@ -33,7 +33,7 @@
         <div class="container">
           <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="{{ route('home.feedback') }}">Feedback</a></li>
+            <li><a href="{{ route('home.feedback') }}">Pengaduan</a></li>
             <li>Create</li>
             </ol>
         </div>
@@ -45,9 +45,9 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <span>Feedback</span>
+          <span>Pengaduan</span>
           <h2>Tambah</h2>
-          <h5>Lengkapi form di bawah ini untuk menambahkan umpan balik</h5>
+          <h5>Lengkapi form di bawah ini untuk menambahkan Pengaduan</h5>
 
         </div>
         </div>
@@ -98,7 +98,7 @@
                         </div>
                 
             
-                    <button type="submit" class="btn btn-primary float-right">Tambah Feedback</button>
+                    <button type="submit" class="btn btn-primary float-right">Tambah Pengaduan</button>
                     </form>
                 </div> <!-- End Col -->
             </div> <!-- End Row-->        

@@ -29,7 +29,7 @@ class RegisterFeedback extends Mailable
     public function build()
     {
         return $this->markdown('mail-register-feedback')
-                    ->subject('Link Menambahkan Umpan Balik')
+                    ->subject('Link Menambahkan Pengaduan')
                     ->with('data',$this->data);
     }
 }
