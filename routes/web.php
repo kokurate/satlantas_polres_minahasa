@@ -61,6 +61,8 @@ use Illuminate\Support\Facades\Route;
 
         // Feedback
         Route::get('admin/feedback/detail/{feedback:token}',[AdminController::class,'feedback_detail'])->name('admin.feedback.detail');
+        Route::delete('admin/feedback/destroy/{feedback:token}',[AdminController::class,'feedback_destroy'])->name('admin.feedback.destroy');
+
 
         // create informasi
         Route::get('admin/informasi/create', [AdminController::class,'informasi_create'])->name('admin.informasi.create');

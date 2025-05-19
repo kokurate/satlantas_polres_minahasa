@@ -157,5 +157,17 @@ class AdminController extends Controller
         return redirect()->route('admin.index')->withSuccess('Kritik & Saran berhasil dihapus!');
 
     }
+
     
+    public function feedback_destroy (Feedback $feedback){
+
+          // Hapus data dari database
+        $feedback->delete();
+    
+        // Redirect dengan pesan sukses
+        return redirect()->route('admin.index')->withSuccess('Pengaduan berhasil dihapus!');
+
+    }
+
+
 }

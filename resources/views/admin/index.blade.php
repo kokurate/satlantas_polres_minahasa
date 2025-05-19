@@ -102,6 +102,13 @@
                                         <a href="{{ route('admin.feedback.detail', $list->token) }}" class="btn btn-info btn-sm rounded-pill">
                                             <i class="bi bi-eye"></i> 
                                         </a>
+                                        <form action="{{ route('admin.feedback.destroy', $list->token) }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger btn-sm rounded-pill" onclick="return confirm('Yakin mau hapus?')">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
