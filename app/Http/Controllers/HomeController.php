@@ -64,6 +64,15 @@ class HomeController extends Controller
             'email' => ['required', 'email'],
         ]);
 
+        // Cek apakah email sudah terdaftar di feedback
+            $alreadyExists = Feedback::where('email', $validated['email'])->exists();
+
+            if ($alreadyExists) {
+                return back()->withErrors(['email' => 'Anda sudah pernah melakukan pengaduan.'])->withInput();
+            }
+
+        // Jika belum terdaftar, lanjutkan proses
+
         $validated['token'] = Str::random(64);
 
         Feedback::create($validated);
@@ -174,7 +183,19 @@ class HomeController extends Controller
                 ->withErrors($validator);
         }
 
-        // Jika lolos validasi
+
+        // Cek apakah email sudah pernah kirim kritik saran
+            $email = $request->input('email');
+            $alreadyExists = KritikSaran::where('email', $email)->exists();
+
+            if ($alreadyExists) {
+                return back()
+                    ->with('toast_error', 'Anda sudah pernah melakukan kritik saran.')
+                    ->withInput();
+            }
+
+            
+        // Jika lolos validasi dan email belum pernah digunakan
         $validatedData = $validator->validated();
 
         // Simpan ke database
