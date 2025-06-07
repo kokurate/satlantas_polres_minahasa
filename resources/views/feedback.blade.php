@@ -118,7 +118,8 @@
                   </tr>
                 @empty
                   <tr>
-                    <td colspan="2" class="text-center">Tidak ada Pengaduan saat ini.</td>
+                    <td class="">Tidak Ada Pengaduan</td>
+                    <td colspan="2" class="">Tidak Ada Email</td>
                   </tr>
                 @endforelse
               </tbody>

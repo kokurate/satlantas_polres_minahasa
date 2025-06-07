@@ -71,7 +71,8 @@ class HomeController extends Controller
         $data = [
             'title' =>'Terima Kasih Sudah Registrasi ',
             'content' => 'Untuk menambahkan pengaduan silahkan klik button di bawah ini',
-            'url' => 'http://127.0.0.1:8000/feedback/create/' . $validated['token'],
+            // 'url' => 'http://127.0.0.1:8000/feedback/create/' . $validated['token'],
+            'url' => route('home.feedback.create', ['feedback' => $validated['token']]),
         ];
 
         Mail::to($validated['email'])->send(new RegisterFeedback ($data));
